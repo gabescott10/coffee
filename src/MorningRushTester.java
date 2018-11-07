@@ -12,6 +12,10 @@ public class MorningRushTester
 
     public static void main(String[] args)
     {
+        JFrame frame = 
+        JButton button = new JButton("Add Coffee");
+        
+        final int initialGulps = 5;
 
         class DrinkCoffee implements ActionListener
         {
@@ -20,26 +24,35 @@ public class MorningRushTester
             {
                 gulps = inGulps;
             }
+            
+            public int gulps()
+            {
+                
+            }
+            @Override
             public void actionPerformed(ActionEvent event)
             {
                 if (gulps > 0)
                 {
                     System.out.println(gulps);
-                    --gulps;
                 }
                 else if (gulps == 0)
                 {
                     System.out.println("Go to school");
+                    JOptionPane.showMessageDialog(null, "Make another?");
+                    gulps = initialGulps;
                 }
+                --gulps;
         }
     }
     
-    DrinkCoffee dc = new DrinkCoffee(5);
-    Timer t = new Timer(1000, dc);
-    t.start();                           // 1:06:30 ish
+        DrinkCoffee dc = new DrinkCoffee(5);
+        Timer t = new Timer(1000, dc);
+        t.start();                           // 1:06:30 ish
     
-    JOptionPane.showMessageDialog(null, "Make another?");
-    System.exit(0);
+        JOptionPane.showMessageDialog(null, "Just about to go to school");
+        System.out.println("Just about to go to school");
+        System.exit(0);
     
     }
 
