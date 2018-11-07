@@ -5,17 +5,25 @@ import javax.swing.JOptionPane;
 
 public class MorningRushTester
 {
-    public MorningRushTester()
+    public class MorningRushTester()
     {
         // TODO Auto-generated constructor stub
+        private static final int DELAY = 1000;
+        
+        public MorningRushTester()
+        {
+            
+        }
     }
 
     public static void main(String[] args)
     {
-        JFrame frame = 
-        JButton button = new JButton("Add Coffee");
+      //  JFrame frame = new Jframe;
+      //  JButton button = new JButton("Add Coffee");
         
-        final int initialGulps = 5;
+        final int initialGulps = 15;
+        
+        
 
         class DrinkCoffee implements ActionListener
         {
@@ -27,7 +35,7 @@ public class MorningRushTester
             
             public int gulps()
             {
-                
+                return gulps;
             }
             @Override
             public void actionPerformed(ActionEvent event)
@@ -46,8 +54,8 @@ public class MorningRushTester
         }
     }
     
-        DrinkCoffee dc = new DrinkCoffee(5);
-        Timer t = new Timer(1000, dc);
+        DrinkCoffee dc = new DrinkCoffee(initialGulps);
+        Timer t = new Timer(DELAY, dc);
         t.start();                           // 1:06:30 ish
     
         JOptionPane.showMessageDialog(null, "Just about to go to school");
